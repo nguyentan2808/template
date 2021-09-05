@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loading-phrases-container {
+            height: 18px;
+            margin-top: 18px;
+            overflow-y: hidden;
+        }
+
+        .loading-phrases {
+            animation: loading_screen_animation_move 10s infinite;
+            /* animation-delay: 5s; */
+            animation-fill-mode: backwards;
+            width: 100%;
+            text-align: center;
+            height: 18px;
+            overflow-y: visible;
+            backface-visibility: hidden;
+            perspective: 1000;
+            transform: translate3d(0, 50%, 0);
+        }
+
+        .loading-phrase {
+            height: 18px;
+            margin-bottom: 9px;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            color: #646F79;
+        }
+
+        @keyframes loading_screen_animation_move {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 50%, 0);
+            }
+
+            18%,
+            2% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                opacity: 0;
+            }
+
+            22%,
+            38% {
+                opacity: 1;
+                transform: translate3d(0, -150%, 0);
+            }
+
+            42%,
+            58% {
+                opacity: 1;
+                transform: translate3d(0, -300%, 0);
+            }
+
+            62%,
+            78% {
+                opacity: 1;
+                transform: translate3d(0, -450%, 0);
+            }
+
+            82%,
+            98% {
+                opacity: 1;
+                transform: translate3d(0, -600%, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate3d(0, -600%, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-phrases-container">
+        <div class="loading-phrases">
+            <div class="loading-phrase">1</div>
+            <div class="loading-phrase">2</div>
+            <div class="loading-phrase">3</div>
+            <div class="loading-phrase">4</div>
+        </div>
+    </div>
+</body>
+
+</html>

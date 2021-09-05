@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            border: 1px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-outline-nguyentan {
+            background-color: transparent;
+            border: 1px solid #42b983;
+            border-radius: 100px;
+            text-align: center;
+            padding: 15px 34px;
+            max-width: 190px;
+            text-transform: uppercase;
+            color: #42b983;
+            font-weight: 500;
+        }
+
+        .btn-outline-nguyentan:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #42b983;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%) inset, 0 0 10px 4px rgb(0 0 0 / 10%);
+            transition: all .3s linear 0s;
+        }
+
+        .btn-outline-nguyentan:focus {
+            /* border: 1.5px solid #42b983; */
+            background-color: #42b983;
+            color: white;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 13%) inset, 0 0 10px 4px rgb(0 0 0 / 13%);
+        }
+
+        .btn-overflow-nguyentan {
+            background-color: #42b983;
+            border: 1px solid #42b983;
+            border-radius: 100px;
+            text-align: center;
+            padding: 15px 34px;
+            max-width: 190px;
+
+            text-transform: uppercase;
+            color: white;
+            font-weight: 500;
+        }
+
+        .btn-overflow-nguyentan:hover {
+            cursor: pointer;
+            opacity: .9;
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%) inset, 0 0 10px 4px rgb(0 0 0 / 10%);
+        }
+
+        .btn-overflow-nguyentan:focus {
+            /* border: 1.5px solid #42b983; */
+            box-shadow: 0 0 10px 0 rgb(0 0 0 / 13%) inset, 0 0 10px 4px rgb(0 0 0 / 13%);
+        }
+
+        .m {
+            margin: 6px;
+        }
+
+        .notification {
+            /* border: 1px solid black; */
+            border-radius: 3px;
+            width: 300px;
+            position: absolute;
+            right: -400px;
+            top: 20px;
+            padding: 10px;
+            /* animation: myfirst 1s; */
+            /* background-color: #98fccf; */
+            box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+
+        }
+
+        .title {
+            font-size: 1.2rem
+        }
+
+        .action {
+            float: right;
+        }
+
+        @keyframes myfirst {
+
+            /* 0% {
+                right: -300px;
+            }
+
+            25% {
+                right: -250px;
+            }
+
+            50% {
+                right: -200px;
+            }
+
+            75% {
+                right: -100px;
+            }
+
+            100% {
+                right: 0px;
+            } */
+            from {
+                right: -400px;
+            }
+
+            to {
+                right: 0;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn-outline-nguyentan m">
+            btn outline
+        </button>
+        <button class="btn-overflow-nguyentan m">
+            btn overflow
+        </button>
+
+    </div>
+    <div class="notification">
+        <div class="title">Title notification</div>
+        <div class="body">Body notification</div>
+        <div class="action">
+            <button>
+                Cancel
+            </button>
+        </div>
+
+        <script>
+
+            const a = async (item) => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log('Oke');
+                        console.log(item + 'promise');
+                        return resolve(item)
+                    }, 1000)
+                })
+            }
+            const func = async () => {
+                const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                console.log(array.length);
+                for (var item of array) {
+                    await a(item)
+                    console.log(item);
+                    console.log('Let go');
+                }
+            }
+            func()
+        </script>
+    </div>
+
+</body>
+
+</html>

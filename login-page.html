@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        html {
+            font-size: 17px;
+        }
+
+        body {
+            background-color: #f6f8f9;
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        }
+
+        label,
+        input {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            display: inline;
+            padding: 0px;
+            line-height: 25px;
+        }
+
+
+        :root {
+            --border-gray: #cbd4db;
+            --text-gray: #6f7782;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 0px;
+            flex-direction: column;
+        }
+
+        .paper-login {
+            background-color: #ffffff;
+            width: 440px;
+            border-radius: 7px;
+            box-shadow: 0 5px 20px 0 rgba(21, 7, 38, 0.08);
+            padding: 24px 48px;
+            box-sizing: border-box;
+        }
+
+        .form-login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px 0px 20px;
+        }
+
+        .img-login {
+            height: 24px;
+            margin-top: 40px;
+            margin-bottom: 48px;
+        }
+
+        .google-login {
+            border: 1px solid var(--border-gray);
+            font-size: 0.9rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all ease .2s;
+        }
+
+        .google-login:hover {
+            background-color: #f6f6f6;
+        }
+
+        .google-icon {
+            height: 20px;
+            position: relative;
+            left: -30px;
+        }
+
+        .divider {
+            color: var(--border-gray);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 32px 0px 22px;
+            display: flex;
+            width: 100%;
+        }
+
+        .custom-break {
+            margin: 7px 5px;
+            border-bottom: 1px solid #c5c8ca;
+            width: 100%;
+            height: 3px;
+        }
+
+        .custom-label {
+            color: var(--text-gray);
+            font-size: 0.71rem;
+            margin-top: 10px;
+        }
+
+        .login-input {
+            border: 1px solid var(--border-gray);
+            border-radius: 5px;
+            font-size: 0.75rem;
+            margin: 8px 0px;
+            padding: 8px 12px;
+            outline: none;
+        }
+
+        .login-input:focus {
+            border-color: #9ca6af;
+        }
+
+        .custom-link {
+            font-size: 0.71rem;
+            color: var(--text-gray);
+            width: 100%;
+        }
+
+        .forgot {
+            margin-top: 5px;
+        }
+
+        .custom-link:hover {
+            color: black;
+        }
+
+        .login-button {
+            width: 100%;
+            margin-top: 35px;
+            background-color: #796eff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: #ffffff;
+            border-radius: 7px;
+        }
+
+        .login-button:hover {
+            background-color: #635ac7;
+        }
+
+        .sign-up {
+            font-size: 0.8rem;
+            margin-top: 35px;
+            color: var(--text-gray);
+        }
+
+        .sign-up-button {
+            text-decoration: none;
+        }
+
+        .sign-up-button:hover,
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-policy {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .wrapper-footer {
+            display: flex;
+            width: 450px;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 40px;
+        }
+
+        li a {
+            text-decoration: none;
+            margin: 0px 4px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+
+        }
+
+        li:not(:first-child, :nth-child(6)):before {
+            content: "•";
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .wrapper {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="paper-login">
+            <div class="form-login">
+                <img class="img-login"
+                    src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6c76122a923c696febd26d2a843aa6daf960a3df/logo.png"
+                    alt="logo-app">
+                <div class="google-login">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="google-icon"
+                        class="google-icon">
+                    <div class="p"> Log in with Google</div>
+                </div>
+                <div class="divider">
+                    <div class="custom-break"></div>
+                    or
+                    <div class="custom-break"></div>
+                </div>
+
+                <label class="custom-label" for="email">Email address</label>
+                <input type="text" class="login-input" id="email" name="email" placeholder="Email">
+
+                <label class="custom-label" for="email">Password</label>
+                <input type="text" class="login-input" id="email" name="email" placeholder="Password">
+
+                <a class="custom-link forgot" href="#">Forgot your password</a>
+
+                <button class="login-button">Log in</button>
+
+                <div class="sign-up">Don't have an account? <a class="sign-up-button" href="#">Sign up</a></div>
+
+
+                <div class="custom-label privacy-policy">This site is protected by reCAPTCHA and the
+                    <a class="custom-link" href="https://policies.google.com/privacy" target="_blank">Google Privacy
+                        Policy </a> and
+                    <a class="custom-link" href="https://policies.google.com/terms" target="_blank"> Terms of
+                        Service</a> apply.
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrapper-footer">
+            <ul class="LoginFooter-navRow">
+                <li><a href="">Asana.com</a>
+                </li>
+                <li><a href="">Support</a>
+                </li>
+                <li><a href="">Integrations</a>
+                </li>
+                <li><a href="">Forum</a>
+                </li>
+                <li><a href="">Developers
+                        &amp; API</a></li>
+                <li><a href="">Resources</a></li>
+                <li><a href="">Guide</a>
+                </li>
+                <li><a href="">Templates</a></li>
+                <li><a href="">Pricing</a>
+                </li>
+                <li><a href="">Terms</a>
+                </li>
+                <li><a href="">Privacy</a>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+</body>
+
+</html>
